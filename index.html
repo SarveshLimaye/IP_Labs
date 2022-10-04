@@ -5,45 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        *{
+            padding : 2px 10px;
+        
+        }
+        embed{
+            width:175px;
+            height: 175px;
+            float:right;
+            margin-right:10px;
+            border-radius:50%;
+            border: 4px dotted red;
+        }
+        #sleeve{
+            background-color:blue;
+            color:white;
+            font-weight:bold;
+        }
+        .tagline{
+            background-color:green;
+            color:white;
+            font-weight:bold;
+
+        }
+        td > input,select {
+            font-size:18px
+        }
+        b,u{
+            color:red;
+            font-size:17px;
+        }
+        input.Submit{
+            background-color:blue;
+            color:white;
+        }
+        /* Psuedo classes */
+        input.Submit:hover{
+            background-color:yellow;
+            color:black;
+            transition : 5s;
+        }
+        h1[target="__header"]{
+            color:darkblue;
+            text-shadow: 0 0 3px #FF0000;
+
+        }
+        h1::first-letter{
+            color:maroon;
+
+        }
+
+    </style>
 </head>
-<body>
-   <header align="center"><h1>Place an Order for T-shirts here</h1></header> 
-  <img src="https://media.gq.com/photos/5ffcc94c228d156e9cc8b2de/master/w_2000,h_1333,c_limit/Gildan-heavy-cotton-T-shirt.jpg"  width="175" height="175" style="float:right;padding-right:30px">
+<body style="background-color: lightblue" >
+   <header align="center"><h1 target="__header">Place an Order for T-shirts here</h1></header> 
+   <embed src="photo.png">
    <form>
     <table align="center">
-        <tr>
-   <td> <label for="tagline"><strong><u>Type a Tagline:</u></strong></label></td>
-   <td> <input type="text" id="tagline" name="tagline" value=""><br></td>  
-</tr>
-<tr>
-    <td> <label for="tagline"><strong><u>Enter your Name:</u></strong></label></td>
-   <td> <input type="text" id="tagline" name="name" value=""><br></td>
-</tr>
-<tr>
-    <td> <label for="tagline"><strong><u>Enter your mail:</u></strong></label></td>
-   <td> <input type="email" id="tagline" name="name" value=""><br></td>
-</tr>
-<tr>
-    <td> <label for="tagline"><strong><u>Enter Conatact Details:</u></strong></label></td>
-   <td> <input type="number" id="tagline" name="name" value=""><br></td>
-</tr>
-   <td> <p> <strong><u>Select any one color : </u></strong></p></td>
     <tr>
-  <td> <input type="radio" id="Black" name="Black" value="Black">
+   <td> <label for="tagline"><b><u>Type a Tagline:</u></b></label></td>
+   <td> <input type="text" id="tagline" name="tagline" value=""><br></td> 
+</tr>
+   <td> <p> <b><u>Select any one color : </u></b></p></td>
+    <tr>
+  <td> <input type="radio" id="Blue" name="Blue" value="Blue">
    <label for="Blue">Blue</label><br>
 </td>
-   <td><input type="radio" id="White" name="White" value="White">
+   <td><input type="radio" id="Green" name="Green" value="Green">
    <label for="Green">Green</label><br>
-   </td>
-   <td><input type="radio" id="White" name="White" value="White">
-    <label for="White">White</label><br>
-    </td>
-    <td><input type="radio" id="White" name="White" value="White">
-        <label for="Black">Black</label><br>
-        </td>
-
+</td>
+  <td><input type="radio" id="Red" name="Red" value="Red">
+   <label for="Red">Red</label><br>
+</td>
 </tr>
-<tr><td><label><strong><u>Select Size of T Shirt : </u></strong></label></td></tr>
+<tr><td><label><b><u>Select Size of T Shirt : </u></b></label></td></tr>
 <tr>
 <td>
     <input type="checkbox" id = "XXL" name="XXL" value = "XXL">
@@ -63,44 +100,20 @@
 </td>
 </tr>
 <tr>
-    <td><label><strong><u>Type of T Shirt Sleeve :</u></strong></label></td>
+    <td><label><b><u>Type of T Shirt Sleeve :</u></b></label></td>
     <td>
-<select id="sleeve">
+<select id="sleeve" class="sleeve">
    <option value="o">Long Sleeve</option>
    <option value="">Short Sleeve</option>
-
   </select>
     </td>
 </tr>
 <tr>
-  <td><label><strong><u>Quantity :</u></strong></label></td>
-  <td>
-<select id="quantity">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="5">4</option>
-</select>
-  </td>
-</tr>
-
+    <td> <label for="tagline" ><b><u>Mention the Date  to be delivered : </u></b></label></td>
+    <td> <input type="date" id="tagline" name="tagline" class="tagline" value=""><br></td> 
+ </tr>
 <tr>
-    <td> <label for="tagline"><strong><u>Enter the preffered delivery date: </u></strong></label></td>
-    <td> <input type="date" id="tagline" name="tagline" value=""><br></td> 
-</tr>
-<tr>
-    <td><label><strong><u>Payment Mode :</u></strong></label></td>
-    <td>
-  <select id="payment-mode">
-    <option value="net-banking">Net Banking</option>
-    <option value="debit-card">Debit Card</option>
-    <option value="cod">COD</option>
-  </select>
-    </td>
-  </tr>
-
-<tr>
-    <td><label><strong><u>Mention the address : </u></strong></label></td>
+    <td><label><b><u>Mention the address : </u></b></label></td>
 </tr>
 <tr>
     <td>
@@ -108,7 +121,7 @@
     </td>
 </tr>
 
-<tr><td><input type="submit" value="Submit"></td></tr>
+<tr><td><input type="submit" value="Submit" class="Submit"></td></tr>
 </table>
     
 
